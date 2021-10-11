@@ -1,7 +1,9 @@
 <% if current_user.id != user.id %>
   <% if current_user.following?(user) %>
-      <th><%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "btn btn-primary" %></th>
+    <th><%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "btn btn-primary" %></th>
   <% else %>
-      <th><%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "btn btn-success" %></th>
+    <th><%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "btn btn-success" %></th>
   <% end %>
+  <% else %>
+    <th></th>
 <% end %>
